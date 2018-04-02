@@ -1,0 +1,77 @@
+main div{
+	/*border: 1px solid red;*/
+}
+
+.sidenav-gradient{
+	/* Made with ColorZilla! */	
+	background: #d8e0de; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d8e0de 13%, #aebfbc 30%, #99afab 45%, #8ea6a2 63%, #829d98 78%, #4e5c5a 97%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #d8e0de 13%,#aebfbc 30%,#99afab 45%,#8ea6a2 63%,#829d98 78%,#4e5c5a 97%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(top,  #d8e0de 13%,#aebfbc 30%,#99afab 45%,#8ea6a2 63%,#829d98 78%,#4e5c5a 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#4e5c5a',GradientType=1 ); /* IE6-9 */
+}
+
+body{
+	/*padding-left: 210px;*/
+}
+@media only screen and (max-width : 992px){
+    body{
+        padding-left: 0;
+    }
+}
+
+.sidenav-title-img{
+	width: 220px;
+	height: auto;
+}
+
+.title-image{
+	width:150px;
+	height: auto;
+	transform: translateX(0%);
+}
+
+.slight-offset{
+	transform: translateX(10px);
+}
+
+
+.text-shadow{
+	text-shadow: 0px 0px 40px #000000;
+}
+
+.center-icon{
+	margin-left: 100px;
+}
+
+
+.thinner{
+	font-weight: 300;
+}
+
+img.resp-img{
+	max-width: 90%;
+	height: auto;
+}
+
+img.panel-img-margin{
+	transform: translate(5%);
+}
+
+img.panel-image{
+	margin-top: 2%;
+}
+
+center{
+	margin: 0 auto;
+}
+
+.border{
+	border: 2px solid black;
+}
+
+main.table, main.th, main.td{
+	border: 1px solid red;
+}
+
+

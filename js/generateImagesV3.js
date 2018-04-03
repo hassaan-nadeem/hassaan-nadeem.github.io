@@ -19,7 +19,8 @@ var showOnMed = " show-on-medium";
 
 var switchContainer = true;
 
-function generateImages(){	///Generates all the images ; No formatting
+///Generates all the images
+function generateImages(){	
     
     var photoContainer = generatePhoto(false);
 

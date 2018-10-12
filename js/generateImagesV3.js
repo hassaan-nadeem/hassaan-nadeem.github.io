@@ -1,82 +1,63 @@
-var coloum1; var coloum2;  var coloum3;
-
-var imgCount = 1;
-var fileCount = 65;
-
-window.onload = function() {
-    container = document.getElementById("main");
-
-    coloum1 = document.getElementById("firstCol");
-    coloum2 = document.getElementById("secondCol");
-    coloum3 = document.getElementById("thirdCol");    
-    
-    var imagesCreated = generateImages();  
-};
+var $column1, $column2, $column3;
 
 var imageClasses = " resp-img panel-img z-depth-4 hoverable";
-var hideOnSmallAndLarge =  " hide-on-small-only hide-on-large-only";
+var hideOnSmallAndLarge = " hide-on-small-only hide-on-large-only";
 var showOnMed = " show-on-medium";
 
 var switchContainer = true;
 
+var fileCount = 65;
+
+$(function () { 
+    $column1 = $("#firstCol");
+    $column2 = $("#secondCol");
+    $column3 = $("#thirdCol");
+
+    generateImages();
+}); 
+
 ///Generates all the images
-function generateImages(){	
-    
-    var photoContainer = generatePhoto(false);
+function generateImages() {
 
-    switch(imgCount%3){
-        case 1:
-            coloum1.appendChild(photoContainer);
-            break;
+    for (var imgCount = 1; imgCount <= fileCount; imgCount++) {
+        var $photoContainer = generatePhoto(false, imgCount);
 
-        case 2:
-            coloum2.appendChild(photoContainer);
-            break;
+        switch (imgCount % 3) {
+            case 1:
+                $column1.append($photoContainer);
+                break;
 
-        case 0:
-            console.log('hidden: '  + imgCount);
-            coloum3.appendChild(photoContainer);   
-            var photoShownOnMed = generatePhoto(true);
-            if(switchContainer){
-                console.log('container 1');
-                coloum1.appendChild(photoShownOnMed);
-                switchContainer = !switchContainer;
-            } 
-            else { 
-                console.log('container 2');
-                coloum2.appendChild(photoShownOnMed);
-                switchContainer = !switchContainer;
-            }     
-            break;
+            case 2:
+                $column2.append($photoContainer);
+                break;
+
+            case 0:
+                $column3.append($photoContainer);
+                var photoShownOnMed = generatePhoto(true, imgCount);
+                if (switchContainer) {
+                    $column1.append(photoShownOnMed);
+                    switchContainer = !switchContainer;
+                }
+                else {
+                    $column2.append(photoShownOnMed);
+                    switchContainer = !switchContainer;
+                }
+                break;
+        }
     }
 
-    imgCount++;
-
-    if(imgCount <= fileCount){
-        generateImages();           // If there are still more files to set up then set them up
-    } 
-
-	$(window).scrollTop(0);
-	
-	return;	
+    $(window).scrollTop(0);
 }
 
-function generatePhoto(showOnMedToggle){
+function generatePhoto(showOnMedToggle, imgCount) {
 
-    var photoContainer = document.createElement("div");		    /// The container for this image
-    if(showOnMedToggle == false) {
-        photoContainer.setAttribute("class", "row center");		/// The classes for the container 
-    }
-    else{
-        photoContainer.setAttribute("class" , "row center " + showOnMed + hideOnSmallAndLarge);
-    }
+    var classStr = (showOnMedToggle) ? "row center " + showOnMed + hideOnSmallAndLarge : "row center" ;
 
-	var photo = document.createElement("img");
-    photo.setAttribute("class", imageClasses);
-	photo.setAttribute("src", "./images/img_" + imgCount + ".jpg");
-    photo.setAttribute("id", "img"+imgCount);
+    var $photoContainer = $('<div>', {"class": classStr.valueOf()})
+
+    var $photo = $('<img>', {"src": ("./images/img (" + imgCount + ").jpg"), "class": imageClasses, "id":"img" + imgCount  });
     
-    photoContainer.appendChild(photo);
+    $photoContainer.append($photo);
 
-    return photoContainer;
+    return $photoContainer;
 }

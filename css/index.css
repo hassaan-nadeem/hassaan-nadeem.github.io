@@ -14,6 +14,7 @@ main div{
 body{
 	/*padding-left: 210px;*/
 }
+
 @media only screen and (max-width : 992px){
     body{
         padding-left: 0;
@@ -44,7 +45,6 @@ body{
 	margin-left: 100px;
 }
 
-
 .thinner{
 	font-weight: 300;
 }
@@ -73,5 +73,3 @@ center{
 main.table, main.th, main.td{
 	border: 1px solid red;
 }
-
-

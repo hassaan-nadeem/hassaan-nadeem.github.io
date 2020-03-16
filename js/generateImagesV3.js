@@ -55,7 +55,7 @@ function generatePhoto(showOnMedToggle, imgCount) {
 
     var $photoContainer = $('<div>', {"class": classStr.valueOf()})
 
-    var $photo = $('<img>', {"src": ("./images/img (" + imgCount + ").jpg"), "class": imageClasses, "id":"img" + imgCount  });
+    var $photo = $('<img>', {"src": ("./images/img (" + imgCount + ").jpg"), "class": imageClasses, "id":"img" + imgCount, "loading"="lazy"  });
     
     $photoContainer.append($photo);
 

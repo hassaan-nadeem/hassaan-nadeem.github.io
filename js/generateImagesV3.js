@@ -6,7 +6,7 @@ var showOnMed = " show-on-medium";
 
 var switchContainer = true;
 
-var fileCount = 87;
+var fileCount = 73;
 
 $(function () { 
     $column1 = $("#firstCol");

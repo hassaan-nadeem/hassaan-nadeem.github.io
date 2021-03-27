@@ -73,3 +73,7 @@ center{
 main.table, main.th, main.td{
 	border: 1px solid red;
 }
+
+.bg-white { 
+background: white !important;
+}
